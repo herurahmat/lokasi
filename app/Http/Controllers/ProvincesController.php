@@ -10,7 +10,8 @@ class ProvincesController extends Controller
 {
     public function index(Request $request)
     {
-        try {           
+        try {
+            $time_call=date('Y-m-d H:i:s');
             $province_id = $request->input('province_id');
             $exclude_province = $request->input('exclude_province');
 
@@ -33,7 +34,8 @@ class ProvincesController extends Controller
                     'count'=>$count,
                     'message' => 'Data Found',
                     'data' => $data,
-                    'state' => 'Get Data'
+                    'state' => 'Get Data',
+                    'date'=> $time_call
                 ]);
             } else {
                 return response()->json([
@@ -41,7 +43,8 @@ class ProvincesController extends Controller
                     'count'=>0,
                     'message' => 'Data empty',
                     'data' => array(),
-                    'state' => 'Get Data'
+                    'state' => 'Get Data',
+                    'date' => $time_call
                 ]);
             }
         } catch (\Throwable $th) {
@@ -50,7 +53,8 @@ class ProvincesController extends Controller
                 'count' => 0,
                 'message' => $th->getMessage(),
                 'data' => array(),
-                'state' => 'Init'
+                'state' => 'Init',
+                'date' => $time_call
             ]);
         }
     }

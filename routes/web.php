@@ -12,7 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return "Document https://documenter.getpostman.com/view/8754350/SW7XZ949?version=latest"
 });
 
 $router->post('provinces','ProvincesController@index');
