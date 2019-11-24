@@ -12,7 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return "Document https://documenter.getpostman.com/view/8754350/SW7XZ949?version=latest";
+    return "URL API ".url('/')."<br/>Document : <a href='https://documenter.getpostman.com/view/8754350/SW7XZ949?version=latest'>API Directory</a>";
 });
 
 $router->post('provinces','ProvincesController@index');
